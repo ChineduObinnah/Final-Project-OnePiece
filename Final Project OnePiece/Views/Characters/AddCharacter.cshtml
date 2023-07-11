@@ -1,0 +1,30 @@
+﻿@model Characters
+<h2>Add a New Character</h2>
+
+@using (Html.BeginForm("AddCharacterToDatabase", "Characters", "Post"))
+{
+    <input asp-for="ID" type="hidden" value="" />
+
+    <label asp-for="Name" class="control-label">Name</label>
+    <input type="text" name="Name" class="form-control" value="" />
+
+    <label asp-for="Role" class="control-label">Role</label>
+    <input type="text" name="Role" class="form-control" />
+
+    <label asp-for="Bounty" class="control-label">Bounty</label>
+    <input type="number" step="0.01" name="Bounty" class="form-control" />
+
+   @* <label asp-for="Devil_Fruit" class="control-label">DevilFruit</label>
+    <input type="text"  name="Devil_Fruit" class="form-control" />
+*@
+
+    <label asp-for="Title" class="control-label">Title</label>
+    <input type="text"  name="Title" class="form-control" />
+
+    <label asp-for="Haki" class="control-label">Haki</label>
+    <input type="text"  name="Haki" class="form-control" />
+
+    
+
+    <input type="submit" value="Create Characters" class="btn btn-primary" />
+}

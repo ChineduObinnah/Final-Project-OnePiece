@@ -1,0 +1,37 @@
+﻿@model Characters
+
+<h3>@Model.Name Information</h3>
+
+<table class="table">
+    <tr>
+        <th> ID</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Bounty</th>
+        <th>Devil Fruit</th>
+        <th>Title</th>
+        <th>Haki</th>
+    </tr>
+    <tr>
+        <td>@Model.ID</td>
+        <td>@Model.Name</td>
+        <td>@Model.Role</td>
+        <td>@Model.Bounty</td>
+      
+        <td>@Model.Title</td>
+        <td>@Model.Haki</td>
+    </tr>
+</table>
+
+<div style="display: block">
+    <a href="/Characters/UpdateCharacters/@Model.ID">Update this Character</a>
+</div>
+
+<div style="display: block">
+
+    @using (Html.BeginForm("DeleteCharacter", "Characters", "Post"))
+    {
+        <input type="hidden" asp-for="ID" value="@Model.ID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this Character" />
+    }
+</div>

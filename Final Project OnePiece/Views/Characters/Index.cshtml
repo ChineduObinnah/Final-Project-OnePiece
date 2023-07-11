@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Characters>
+
+<h2>Characters</h2>
+
+<div style="display: block">
+    <a href="/Characters/AddCharacter/">Create a New Character</a>
+</div>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Bounty</th>
+       
+        <th>Title</th>
+        <th>Haki</th>
+        
+    </tr>
+
+    @foreach (var characters in @Model)
+    {
+        <tr>
+            <td><a href=/Characters/ViewCharacters/@characters.ID>@characters.ID</a></td>
+
+            <td>@characters.Name</td>
+            <td>@characters.Role</td>
+            <td>@characters.Bounty</td>
+         
+            <td>@characters.Title</td>
+            <td>@characters.Haki</td>
+         
+        </tr>
+    }
+
+</table>
